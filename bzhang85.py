@@ -142,6 +142,7 @@ st.write("""
 1. **Set Start and Goal**: Use the sidebar to select the start and goal coordinates for the pathfinding. Coordinates range from 0 to 26 for both X and Y.
 2. **Find Path**: Click the 'Find Path' button in the sidebar after setting the coordinates. 
 3. **View Results**: The optimal path from start to goal, along with its total cost and a visual representation, will be displayed below.
+4. **Terrain Costs**: plain: 1, forest: 3, mountain: 5, swamp: 7
 
 Feel free to experiment with different start and goal coordinates to explore various paths and terrains!
 """)
