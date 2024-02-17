@@ -127,11 +127,16 @@ def pretty_print_path(world: List[List[str]], offsets: List[Tuple[int, int]], st
 
     world_copy[y][x] = '🎁'
 
-    output_string = ""
+    # Creating an HTML table 
+    table_html = '<table style="border-collapse: collapse; table-layout: fixed;">\n'
     for row in world_copy:
-        output_string += "".join(row) + "<br>"
+        table_html += "<tr>\n"
+        for cell in row:
+            table_html += f'<td style="padding: 0; border: none; text-align: center; font-size: large;">{cell}</td>\n'
+        table_html += "</tr>\n"
+    table_html += "</table>"
 
-    st.markdown(output_string, unsafe_allow_html=True)
+    st.markdown(table_html, unsafe_allow_html=True)
     
     return total_cost
 
@@ -143,7 +148,7 @@ st.write("""
 2. **Find Path**: Click the 'Find Path' button in the sidebar after setting the coordinates. 
 3. **View Results**: The optimal path from start to goal, along with its total cost and a visual representation, will be displayed below.
 4. **Terrain Costs**: plain: 1, forest: 3, mountain: 5, swamp: 7
-
+         
 Feel free to experiment with different start and goal coordinates to explore various paths and terrains!
 """)
 # Sidebar for input
